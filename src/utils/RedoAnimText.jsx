@@ -46,7 +46,11 @@ export default function RedoAnimText({ delay }) {
   }, []);
 
   return (
-    <Heading as="h1" size="xl">
+    <Heading
+      fontWeight={600}
+      fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+      lineHeight={'110%'}
+    >
       <motion.span className="inline">{displayText}</motion.span>
     </Heading>
   );

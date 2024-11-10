@@ -29,18 +29,21 @@ export default function AnimText({ delay }) {
 
   return (
     <span style={{ display: 'block', height: '100px' }} className="">
-      <Stack spacing={1}>
-        <Heading as="h1" size="2xl" className="text-gradient">
-          <motion.span>{displayText}</motion.span>
-        </Heading>
+      <Heading
+        fontWeight={600}
+        fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+        lineHeight={'110%'}
+        className="text-gradient"
+      >
+        <motion.span>{displayText}</motion.span>
+      </Heading>
 
-        {done && (
-          <Flex>
-            <RedoAnimText delay={delay + 1} />
-            <CursorBlinker />
-          </Flex>
-        )}
-      </Stack>
+      {done && (
+        <Flex justifyContent={'center'}>
+          <RedoAnimText delay={delay + 1} />
+          <CursorBlinker />
+        </Flex>
+      )}
     </span>
   );
 }

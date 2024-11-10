@@ -22,11 +22,11 @@ export default function CursorBlinker() {
       animate="blinking"
       style={{
         display: 'inline-block',
-        height: '40px',
-        width: '3px',
+        height: '55px',
+        width: '8px',
         backgroundColor: cursorColor,
         marginLeft: '5px',
-        transform: 'translateY(8px)',
+        transform: 'translateY(10px)',
       }}
     />
   );

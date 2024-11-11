@@ -33,36 +33,27 @@ const About = () => {
             <Divider orientation="horizontal"></Divider>
           </Stack>
 
-          {/* //TODO: A responsive functionality  */}
-          <Text color={'white.600'} fontSize={'xl'} px={4} textAlign={'left'}>
-            Hi there! I am a Computer Science graduate from the National
-            University of Singapore, where I specialized in Software Engineering
-            and Networking. I am passionate about software development and I am
-            always eager to learn new technologies. I have experience in
-            full-stack development and I am currently looking for opportunities
-            in software development. I am well-versed in several programming
-            languages and frameworks and am open to learn more!
-          </Text>
+          <Flex
+            direction={{ base: 'column', md: 'row' }}
+            gap={'2rem'}
+            alignItems={{ base: 'center', md: 'flex-start' }}
+          >
+            <Text color={'white.600'} fontSize={'lg'} px={4} textAlign={'left'}>
+              Hi there! I am a Computer Science graduate from the National
+              University of Singapore, where I specialized in Software
+              Engineering and Networking. I am passionate about software
+              development and I am always eager to learn new technologies. I
+              have experience in full-stack development and I am currently
+              looking for opportunities in software development. I am
+              well-versed in several programming languages and frameworks and am
+              open to learn more!
+            </Text>
 
-          <Skills />
+            <Skills />
+          </Flex>
         </Stack>
       </Container>
     </>
-    //   <Flex paddingTop={10}>
-    //   <Stack spacing={2}>
-    //     <Heading textColor="white">About Me</Heading>
-    //     <Text>
-    //       Hi there! I am a Computer Science graduate from the National
-    //       University of Singapore, where I specialized in Software Engineering
-    //       and Networking. I am passionate about software development and I am
-    //       always eager to learn new technologies. I have experience in
-    //       full-stack development and I am currently looking for opportunities in
-    //       software development. I am well-versed in several programming
-    //       languages and frameworks and am open to learn more!
-    //     </Text>
-    //   </Stack>
-    //   <Skills />
-    // </Flex>
   );
 };
 

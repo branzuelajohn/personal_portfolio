@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useColorModeValue } from '@chakra-ui/react';
+import { useColorModeValue, useBreakpointValue } from '@chakra-ui/react';
 
 const cursorVariants = {
   blinking: {
@@ -16,17 +16,23 @@ const cursorVariants = {
 
 export default function CursorBlinker() {
   const cursorColor = useColorModeValue('black', 'white'); // Light mode: black, Dark mode: white
+  const cursorHeight = useBreakpointValue({ base: '25px', md: '55px' });
+  const cursorWidth = useBreakpointValue({ base: '5px', md: '8px' });
+  const cursorTransform = useBreakpointValue({
+    base: 'translateY(4px)',
+    md: 'translateY(13px)',
+  });
   return (
     <motion.div
       variants={cursorVariants}
       animate="blinking"
       style={{
         display: 'inline-block',
-        height: '55px',
-        width: '8px',
+        height: cursorHeight,
+        width: cursorWidth,
         backgroundColor: cursorColor,
         marginLeft: '5px',
-        transform: 'translateY(10px)',
+        transform: cursorTransform,
       }}
     />
   );

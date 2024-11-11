@@ -16,6 +16,7 @@ import {
   DrawerOverlay,
   DrawerContent,
   IconButton,
+  Center,
 } from '@chakra-ui/react';
 import {
   AiFillLinkedin,
@@ -54,7 +55,7 @@ const Navbar = () => {
   const theme = useTheme();
   const textColor = theme.colors.text[darkMode ? 'dark' : 'light'];
   const borderColor = useColorMode('black', 'white');
-  //  <Flex px={4} py={2} borderBottom={`1px solid ${borderColor}`}>
+
   return (
     <>
       <Flex
@@ -67,19 +68,19 @@ const Navbar = () => {
         alignItems={'center'}
         justifyContent={'space-between'}
         w="100%"
+        bg={useColorModeValue('white', 'gray.800')}
       >
         <Stack direction={'row'}>
-          <Link onClick={scrollToHero}>
-            <span>Logo Here</span>
-          </Link>
+          <Button variant="ghost" onClick={scrollToHero}>
+            <span>{'<JOHN ALEC />'}</span>
+          </Button>
           {isLargerThanMD ? (
             <>
-              {' '}
               <Link href="http://www.linkedin.com/in/johnalecmb" isExternal>
-                <Icon as={AiFillLinkedin} boxSize={8} />
+                <Icon as={AiFillLinkedin} boxSize={8} mt={1} />
               </Link>
               <Link href="mailto:branzuelajohn@gmail.com" isExternal>
-                <Icon as={AiOutlineMail} boxSize={8} />
+                <Icon as={AiOutlineMail} boxSize={8} mt={1} />
               </Link>
             </>
           ) : (
@@ -108,13 +109,13 @@ const Navbar = () => {
               <></>
             )}
 
-            {/* <Button onClick={toggleColorMode}>
+            <Button onClick={toggleColorMode}>
               {colorMode === 'light' ? (
                 <Icon as={AiFillMoon} boxSize={8} />
               ) : (
                 <Icon as={AiFillSun} boxSize={8} onClick={toggleColorMode} />
               )}{' '}
-            </Button> */}
+            </Button>
 
             {isLargerThanMD ? (
               <></>
@@ -141,15 +142,15 @@ const Navbar = () => {
                       <Button variant="ghost" onClick={scrollToAbout}>
                         Contact
                       </Button>
-                      <Link
+                      {/* <Link
                         href="http://www.linkedin.com/in/johnalecmb"
                         isExternal
                       >
-                        <Icon as={AiFillLinkedin} boxSize={8} />
+                        <Icon as={AiFillLinkedin} boxSize={6} mt={4} />
                       </Link>
                       <Link href="mailto:branzuelajohn@gmail.com" isExternal>
-                        <Icon as={AiOutlineMail} boxSize={8} />
-                      </Link>
+                        <Icon as={AiOutlineMail} boxSize={6} mt={4} />
+                      </Link> */}
                     </DrawerBody>
                   </DrawerContent>
                 </Drawer>

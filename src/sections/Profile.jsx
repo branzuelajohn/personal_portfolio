@@ -11,10 +11,13 @@ import {
   GridItem,
   Container,
   Icon,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import Skills from '../components/Skills';
 import { FaCheck } from 'react-icons/fa';
 const Profile = () => {
+  const dividerTextColor = useColorModeValue('gray.600', 'whiteAlpha.400');
+  const dividerColor = useColorModeValue('gray.800', 'whiteAlpha.400');
   const educationalInstitutions = [
     'National University of Singapore',
     'Anglo-Chinese Junior College',
@@ -32,17 +35,20 @@ const Profile = () => {
         >
           <Stack align="center" direction="row" px={4}>
             <HStack mx={4}>
-              <Text color="whiteAlpha.400" fontWeight={800}>
+              <Text color={dividerTextColor} fontWeight={800}>
                 {' '}
                 01{' '}
               </Text>
               <Text fontWeight={800}>Profile</Text>
             </HStack>
-            <Divider orientation="horizontal"></Divider>
+            <Divider
+              orientation="horizontal"
+              borderColor={dividerColor}
+            ></Divider>
           </Stack>
 
           <Grid templateColumns={{ base: '1fr', md: '2fr 3fr' }} gap={8}>
-            <GridItem>
+            <GridItem display={'flex'} alignItems={'center'}>
               <Image
                 src="/profile_pic.png"
                 alt="Profile Picture"

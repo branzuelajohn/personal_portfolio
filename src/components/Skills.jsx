@@ -90,7 +90,13 @@ const Skills = () => {
           </Flex> */}
         {/* Languages Tab */}
         <TabPanel>
-          <Box display="flex" gap={4} justifyContent="center" flexWrap="wrap">
+          <Box
+            display="flex"
+            columnGap={4}
+            marginTop={2}
+            alignItems="center"
+            flexWrap="wrap"
+          >
             {languages.map((language, index) => (
               <Icon key={index} as={language.icon} boxSize={8} />
             ))}

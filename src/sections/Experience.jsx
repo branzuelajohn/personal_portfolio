@@ -5,20 +5,14 @@ import {
   HStack,
   Text,
   Divider,
-  Flex,
-  Heading,
-  Icon,
-  useBreakpointValue,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
+import { VerticalTimeline } from 'react-vertical-timeline-component';
 import starbucks from '../assets/starbucks.png';
 import 'react-vertical-timeline-component/style.min.css';
-import PropTypes from 'prop-types';
-import { FaSuitcase } from 'react-icons/fa6';
+
+import ExperienceCard from '../components/ExperienceCard';
 
 const experiences = [
   {
@@ -62,102 +56,11 @@ const experiences = [
   },
 ];
 
-const ExperienceCard = ({ experience }) => {
-  const contentStyle = useBreakpointValue({
-    base: {
-      background: '#213547',
-      color: '#fff',
-    },
-    md: {
-      background: '#213547',
-      color: '#fff',
-      width: '60%',
-      marginLeft: '-15%',
-      marginRight: '-15%',
-    },
-  });
-  return (
-    <VerticalTimelineElement
-      contentStyle={contentStyle}
-      contentArrowStyle={{ borderRight: '7px solid  #242424 ' }}
-      date={experience.date}
-      iconStyle={{ background: '#383E56' }}
-      icon={
-        <Icon
-          as={FaSuitcase}
-          boxSize={8}
-          style={{
-            width: '50%',
-            height: '50%',
-            objectFit: 'contain',
-            transform: useBreakpointValue({
-              base: 'translate(2px, 2px)',
-              md: 'translate(-3px, -2px)',
-            }),
-          }}
-        />
-      }
-    >
-      <Flex direction="column" rowGap={4}>
-        <Flex direction="column" rowGap={2}>
-          <Heading>{experience.title}</Heading>
-          <Text
-            fontWeight="semibold"
-            color="primary"
-            display="inline-flex"
-            columnGap={1}
-          >
-            {experience.company_name}{' '}
-            <Text as="span" color="text" fontWeight="medium">
-              {' '}
-              | {experience.job_status}
-            </Text>
-          </Text>
-        </Flex>
-
-        {/* <Flex alignItems="center" columnGap={4} marginTop={2}>
-            {techStack.map((imageUrl, index) => (
-              <Image
-                key={`${imageUrl} - ${index}`}
-                src={imageUrl}
-                alt="Tech Stack Icon"
-                width={28}
-                height={28}
-              />
-            ))}
-          </Flex> */}
-
-        {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            style={{
-              color: '#b0b0b0',
-              fontSize: '14px',
-              paddingLeft: '5px',
-              letterSpacing: '0.5px',
-            }}
-          >
-            <Text textAlign="justify">{point}</Text>
-          </li>
-        ))}
-      </Flex>
-    </VerticalTimelineElement>
-  );
-};
-
-ExperienceCard.propTypes = {
-  experience: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    company_name: PropTypes.string.isRequired,
-    icon: PropTypes.string,
-    iconBg: PropTypes.string.isRequired,
-    job_status: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    points: PropTypes.arrayOf(PropTypes.string).isRequired,
-  }).isRequired,
-};
-
 const Experience = () => {
+  const dividerTextColor = useColorModeValue('gray.600', 'whiteAlpha.400');
+  const dividerColor = useColorModeValue('gray.800', 'whiteAlpha.400');
+  const timelineLineColor = useColorModeValue('black', 'white');
+
   return (
     <Container maxW="7xl" id="experience">
       <Stack
@@ -168,12 +71,12 @@ const Experience = () => {
       >
         <Stack align="center" direction="row" px={4}>
           <HStack mx={4}>
-            <Text color="whiteAlpha.400" fontWeight={800}>
+            <Text color={dividerTextColor} fontWeight={800}>
               02
             </Text>
             <Text fontWeight={800}>Experience</Text>
           </HStack>
-          <Divider orientation="horizontal" />
+          <Divider orientation="horizontal" borderColor={dividerColor} />
         </Stack>
 
         <div>
@@ -183,7 +86,7 @@ const Experience = () => {
           </motion.div>
 
           <div style={{ marginTop: '20px' }}>
-            <VerticalTimeline>
+            <VerticalTimeline lineColor={timelineLineColor}>
               {experiences.map((experience, index) => (
                 <ExperienceCard
                   key={`experience-${index}`}

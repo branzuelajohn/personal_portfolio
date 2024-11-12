@@ -40,9 +40,19 @@ const Navbar = () => {
     heroSection.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const scrollToAbout = () => {
-    const aboutSection = document.querySelector('#about');
-    aboutSection.scrollIntoView({ behavior: 'smooth' });
+  const scrollToProfile = () => {
+    const profileSection = document.querySelector('#profile');
+    profileSection.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToExperience = () => {
+    const experienceSection = document.querySelector('#experience');
+    experienceSection.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToProjects = () => {
+    const projectsSection = document.querySelector('#projects');
+    projectsSection.scrollIntoView({ behavior: 'smooth' });
   };
 
   const changeScroll = () =>
@@ -92,16 +102,16 @@ const Navbar = () => {
           <Stack direction={'row'} spacing={7}>
             {isLargerThanMD ? (
               <>
-                <Button variant="ghost" onClick={scrollToAbout}>
+                <Button variant="ghost" onClick={scrollToProfile}>
                   About
                 </Button>
-                <Button variant="ghost" onClick={scrollToAbout}>
+                <Button variant="ghost" onClick={scrollToExperience}>
                   Experience
                 </Button>
-                <Button variant="ghost" onClick={scrollToAbout}>
+                <Button variant="ghost" onClick={scrollToHero}>
                   Education
                 </Button>
-                <Button variant="ghost" onClick={scrollToAbout}>
+                <Button variant="ghost" onClick={scrollToHero}>
                   Projects
                 </Button>
               </>
@@ -130,16 +140,16 @@ const Navbar = () => {
                   <DrawerOverlay />
                   <DrawerContent>
                     <DrawerBody>
-                      <Button variant="ghost" onClick={scrollToAbout}>
-                        About
+                      <Button variant="ghost" onClick={scrollToProfile}>
+                        Profile
                       </Button>
-                      <Button variant="ghost" onClick={scrollToAbout}>
+                      <Button variant="ghost" onClick={scrollToExperience}>
                         Experience
                       </Button>
-                      <Button variant="ghost" onClick={scrollToAbout}>
+                      <Button variant="ghost" onClick={scrollToProfile}>
                         Projects
                       </Button>
-                      <Button variant="ghost" onClick={scrollToAbout}>
+                      <Button variant="ghost" onClick={scrollToProfile}>
                         Contact
                       </Button>
                       {/* <Link

@@ -17,6 +17,11 @@ const colors = {
   },
 };
 
-const theme = extendTheme({ config, colors });
+const fonts = {
+  heading: 'Poppins, sans-serif',
+  body: 'Poppins, sans-serif',
+};
+
+const theme = extendTheme({ config, colors, fonts });
 
 export default theme;

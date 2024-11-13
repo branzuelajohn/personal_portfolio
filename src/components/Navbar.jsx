@@ -55,6 +55,11 @@ const Navbar = () => {
     projectsSection.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToContact = () => {
+    const contactSection = document.querySelector('#contact');
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const changeScroll = () =>
     document.body.scrollTop > 80 || document.documentElement.scrollTop > 80
       ? setScroll(true)
@@ -108,11 +113,11 @@ const Navbar = () => {
                 <Button variant="ghost" onClick={scrollToExperience}>
                   Experience
                 </Button>
-                <Button variant="ghost" onClick={scrollToHero}>
-                  Education
-                </Button>
-                <Button variant="ghost" onClick={scrollToHero}>
+                <Button variant="ghost" onClick={scrollToProjects}>
                   Projects
+                </Button>
+                <Button variant="ghost" onClick={scrollToContact}>
+                  Contact
                 </Button>
               </>
             ) : (
@@ -141,12 +146,12 @@ const Navbar = () => {
                   <DrawerContent>
                     <DrawerBody>
                       <Button variant="ghost" onClick={scrollToProfile}>
-                        Profile
+                        About
                       </Button>
                       <Button variant="ghost" onClick={scrollToExperience}>
                         Experience
                       </Button>
-                      <Button variant="ghost" onClick={scrollToProfile}>
+                      <Button variant="ghost" onClick={scrollToProjects}>
                         Projects
                       </Button>
                       <Button variant="ghost" onClick={scrollToProfile}>

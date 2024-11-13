@@ -4,7 +4,8 @@ import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import Profile from './sections/Profile';
 import Experience from './sections/Experience';
-import { Stack, Container, Box } from '@chakra-ui/react';
+import Contact from './sections/Contact';
+import Projects from './sections/Projects';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <Hero />
       <Profile />
       <Experience />
+      <Projects />
+      <Contact />
     </>
   );
 }

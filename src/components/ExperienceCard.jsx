@@ -17,7 +17,7 @@ const ExperienceCard = ({ experience }) => {
   const iconColor = useColorModeValue('white', 'white');
   const iconBgColor = useColorModeValue('#33adff', '#383E56');
   const dateColor = useColorModeValue('black', 'white');
-  const cardBgColor = useColorModeValue('#33adff', '#213547');
+  const cardBgColor = useColorModeValue('#60a5fa', '#213547');
   const cardTitleColor = useColorModeValue('#213547', '#33adff');
   const cardTextColor = useColorModeValue('black', 'white');
   const arrowColor = useColorModeValue('#2196F3', '#242424');
@@ -62,12 +62,15 @@ const ExperienceCard = ({ experience }) => {
 
       <Flex direction="column" rowGap={4}>
         <Flex direction="column" rowGap={2}>
-          <Heading size={'3xl'} style={{ color: cardTextColor }}>
+          <Heading
+            size={{ base: 'xl', md: '3xl' }}
+            style={{ color: cardTextColor }}
+          >
             {experience.title}
           </Heading>
           <Heading
             mt={2}
-            size="2xl"
+            size={{ base: 'lg', md: '2xl' }}
             style={{ color: cardTitleColor }}
             display="inline-flex"
             columnGap={1}
@@ -92,6 +95,7 @@ const ExperienceCard = ({ experience }) => {
                   whiteSpace="normal"
                   fontSize="md"
                   lineHeight="1.6"
+                  align={'left'}
                 >
                   {point}
                 </Text>

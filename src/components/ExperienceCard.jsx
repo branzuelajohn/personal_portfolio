@@ -112,7 +112,7 @@ ExperienceCard.propTypes = {
     title: PropTypes.string.isRequired,
     company_name: PropTypes.string.isRequired,
     icon: PropTypes.string,
-    iconBg: PropTypes.string.isRequired,
+    iconBg: PropTypes.string,
     job_status: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     points: PropTypes.arrayOf(PropTypes.string).isRequired,

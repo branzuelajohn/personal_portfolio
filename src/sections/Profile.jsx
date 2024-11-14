@@ -15,15 +15,11 @@ import {
 } from '@chakra-ui/react';
 import Skills from '../components/Skills';
 import { FaCheck } from 'react-icons/fa';
+import { profileJson } from '../constants/data';
 const Profile = () => {
   const dividerTextColor = useColorModeValue('gray.600', 'whiteAlpha.400');
   const dividerColor = useColorModeValue('gray.800', 'whiteAlpha.400');
-  const educationalInstitutions = [
-    'National University of Singapore',
-    'Anglo-Chinese Junior College',
-    "St. Joseph's Institution",
-    'North View Primary School',
-  ];
+  const educationalInstitutions = profileJson.educationalInstitutions;
   return (
     <>
       <Container maxW={'7xl'} id="profile">
@@ -68,22 +64,11 @@ const Profile = () => {
                 </Heading>
                 <Text
                   color={'white.600'}
-                  fontSize={{ base: 'lg', md: 'xl' }}
+                  fontSize={{ base: 'md', md: 'xl' }}
                   textAlign={'left'}
+                  whiteSpace={'pre-line'}
                 >
-                  Hi there! I am a Computer Science graduate from the National
-                  University of Singapore, where I specialized in Software
-                  Engineering and Networking. I am passionate about software
-                  development and I am always eager to learn new technologies. I
-                  have experience in full-stack development and I am currently
-                  looking for opportunities in software development. I am
-                  well-versed in several programming languages and frameworks
-                  and am open to learn more!
-                  <br></br> <br></br>In my free time, you can probably find me
-                  breaking a sweat on the field playing Touch Rugby or going for
-                  a casual jog in the neighbourhood. Staying active is important
-                  to me, as I truly believe it helps shape a balanced and
-                  productive lifestyle.
+                  {profileJson.about}
                 </Text>
               </Box>
 
@@ -96,7 +81,7 @@ const Profile = () => {
                     <Icon as={FaCheck} color="green.500" mt={1} />
                     <Text
                       color={'white.600'}
-                      fontSize={{ base: 'lg', md: 'xl' }}
+                      fontSize={{ base: 'md', md: 'xl' }}
                       textAlign={'left'}
                     >
                       {institution}

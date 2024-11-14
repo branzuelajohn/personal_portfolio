@@ -65,7 +65,7 @@ const portfolioList = [
     imageThumbnail: '/assets/images/project-nba-analytics.webp',
     description:
       "Power NBA Analytics is a startup project aimed at helping aspiring sports commentators improve their content through data visualizations. The app offers features such as team win rates comparison, team vs NBA statistics, player performance rankings, and salary vs performance analysis. It uses advanced data analytics to provide customizable, low-cost visualizations tailored to basketball teams and individual players' statistics, designed for commentators and sports analysts.\n\nThe project was created by a group of students from the DBA3702 (Descriptive Analytics with R) module at the National University of Singapore. The project uses data visualizations and cleaning techniques primarily with R, while data scraping is done with Python using BeautifulSoup. It utilizes libraries like Shiny, ggplot2, and plotly for visualizations and data manipulation, and BeautifulSoup for scraping data from websites to gather salary information for the 2020-2021 season.",
-    livePreviewURL: 'https://github.com/branzuelajohn/power-nba-analytics',
+    livePreviewURL: '',
     repositoryURL: 'https://github.com/branzuelajohn/power-nba-analytics',
     techStack: [
       {
@@ -118,4 +118,15 @@ const experiences = [
   },
 ];
 
-export { portfolioList, experiences };
+const profileJson = {
+  about:
+    'Hi there! I am a Computer Science graduate from the National University of Singapore, where I specialized in Software Engineering and Networking. I am passionate about software development and I am always eager to learn new technologies. I have experience in full-stack development and I am currently looking for opportunities in software development. I am well-versed in several programming languages and frameworks and am open to learn more! \n\n In my free time, you can probably find me breaking a sweat on the field playing Touch Rugby or going for a casual jog in the neighbourhood. Staying active is important to me, as I truly believe it helps shape a balanced and productive lifestyle.',
+  educationalInstitutions: [
+    'National University of Singapore',
+    'Anglo-Chinese Junior College',
+    "St. Joseph's Institution",
+    'North View Primary School',
+  ],
+};
+
+export { portfolioList, experiences, profileJson };

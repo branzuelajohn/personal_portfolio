@@ -33,7 +33,7 @@ export default function PortfolioCard({
   techStack,
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const previewButtonBgColor = useColorModeValue('transparent', 'transparent');
+  const previewButtonBgColor = useColorModeValue('black', 'light');
   const previewButtonHoverBgColor = useColorModeValue('text', 'text');
   const previewButtonHoverColor = useColorModeValue('white', 'primary');
   const previewButtonBorderColor = useColorModeValue('text', 'text');

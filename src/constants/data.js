@@ -4,7 +4,7 @@ const portfolioList = [
     imageThumbnail: '/assets/images/cplusplus.webp',
     description:
       'Designed and programmed a parser in C++ that can take in and statically analyze a source program written in SIMPLE and return patterns, relationships and entities.\n\n Collaborated as a team of 6 where we split into three sub-teams to work on different components (source processer, program knowledge base & query processing system) of the project under an AGILE work cycle, worked with Scrum methodology',
-    livePreviewURL: 'https://github.com/branzuelajohn',
+    livePreviewURL: '',
     repositoryURL: 'https://github.com/branzuelajohn',
     techStack: [
       {

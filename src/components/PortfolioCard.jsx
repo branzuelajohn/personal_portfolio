@@ -33,8 +33,8 @@ export default function PortfolioCard({
   techStack,
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const previewButtonBgColor = useColorModeValue('black', 'light');
-  const previewButtonHoverBgColor = useColorModeValue('text', 'text');
+  const previewButtonBgColor = useColorModeValue('light', 'dark');
+  const previewButtonHoverBgColor = useColorModeValue('black', 'light');
   const previewButtonHoverColor = useColorModeValue('white', 'primary');
   const previewButtonBorderColor = useColorModeValue('text', 'text');
   const truncatedTechStackList = truncateList(techStack, 0, 3);
@@ -154,7 +154,7 @@ export default function PortfolioCard({
               target="_blank"
               paddingX={{ base: 2 }}
               backgroundColor={
-                livePreviewURL === '' ? 'gray.500' : previewButtonHoverBgColor
+                livePreviewURL === '' ? 'gray.500' : previewButtonBgColor
               }
               cursor={livePreviewURL === '' ? 'not-allowed' : 'pointer'}
               _hover={
@@ -162,8 +162,8 @@ export default function PortfolioCard({
                   ? {}
                   : {
                       borderColor: previewButtonBorderColor,
-                      backgroundColor: previewButtonBgColor,
-                      color: previewButtonHoverColor,
+                      // backgroundColor: previewButtonBgColor,
+                      // color: previewButtonHoverColor,
                     }
               }
               rightIcon={<BsFillEyeFill />}
